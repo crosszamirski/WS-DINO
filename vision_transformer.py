@@ -1,3 +1,7 @@
+"From the dino repository:"
+
+# https://github.com/facebookresearch/dino
+
 """
 Mostly copy-paste from timm library.
 https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
