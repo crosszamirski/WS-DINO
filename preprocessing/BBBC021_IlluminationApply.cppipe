@@ -1,0 +1,191 @@
+CellProfiler Pipeline: http://www.cellprofiler.org
+Version:5
+DateRevision:407
+GitHash:
+ModuleCount:13
+HasImagePlaneDetails:False
+
+LoadData:[module_num:1|svn_version:'Unknown'|variable_revision_number:6|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Input data file location:Elsewhere...|
+    Name of the file:LoadDataFile.csv
+    Load images based on this data?:Yes
+    Base image location:Elsewhere...|/root/
+    Process just a range of rows?:No
+    Rows to process:1,100000
+    Group images by metadata?:No
+    Select metadata tags for grouping:Plate
+    Rescale intensities?:Yes
+
+CorrectIlluminationApply:[module_num:2|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DAPI
+    Name the output image:DAPIcorrected
+    Select the illumination function:DAPIIllum
+    Select how the illumination function is applied:Divide
+    Set output image values less than 0 equal to 0?:Yes
+    Set output image values greater than 1 equal to 1?:Yes
+
+CorrectIlluminationApply:[module_num:3|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Actin
+    Name the output image:Actincorrected
+    Select the illumination function:ActinIllum
+    Select how the illumination function is applied:Divide
+    Set output image values less than 0 equal to 0?:Yes
+    Set output image values greater than 1 equal to 1?:Yes
+
+CorrectIlluminationApply:[module_num:4|svn_version:'Unknown'|variable_revision_number:5|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Tubulin
+    Name the output image:Tubulincorrected
+    Select the illumination function:TubulinIllum
+    Select how the illumination function is applied:Divide
+    Set output image values less than 0 equal to 0?:Yes
+    Set output image values greater than 1 equal to 1?:Yes
+
+Resize:[module_num:5|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:DAPIcorrected
+    Name the output image:DAPIcorrsmall
+    Resizing method:Resize by a fraction or multiple of the original size
+    Resizing factor:0.5
+    Width of the final image:100
+    Height of the final image:100
+    Interpolation method:Bicubic
+    Method to specify the dimensions:Manual
+    Select the image with the desired dimensions:None
+    Additional image count:0
+
+Resize:[module_num:6|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Actincorrected
+    Name the output image:Actincorrsmall
+    Resizing method:Resize by a fraction or multiple of the original size
+    Resizing factor:0.5
+    Width of the final image:100
+    Height of the final image:100
+    Interpolation method:Bicubic
+    Method to specify the dimensions:Manual
+    Select the image with the desired dimensions:None
+    Additional image count:0
+
+Resize:[module_num:7|svn_version:'Unknown'|variable_revision_number:4|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the input image:Tubulincorrected
+    Name the output image:Tubulincorrsmall
+    Resizing method:Resize by a fraction or multiple of the original size
+    Resizing factor:0.5
+    Width of the final image:100
+    Height of the final image:100
+    Interpolation method:Bicubic
+    Method to specify the dimensions:Manual
+    Select the image with the desired dimensions:None
+    Additional image count:0
+
+SaveImages:[module_num:8|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:DAPIcorrected
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:DAPI
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_corrected
+    Saved file format:tiff
+    Output file location:Elsewhere...|
+    Image bit depth:16-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+
+SaveImages:[module_num:9|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:Actincorrected
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:Actin
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_corrected
+    Saved file format:tiff
+    Output file location:Elsewhere...|
+    Image bit depth:16-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+
+SaveImages:[module_num:10|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:Tubulincorrected
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:Tubulin
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_corrected
+    Saved file format:tiff
+    Output file location:Elsewhere...|
+    Image bit depth:16-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+
+SaveImages:[module_num:11|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:DAPIcorrsmall
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:DAPI
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_corrected_resized
+    Saved file format:tiff
+    Output file location:Elsewhere...|
+    Image bit depth:16-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+
+SaveImages:[module_num:12|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:Actincorrsmall
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:Actin
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_corrected_resized
+    Saved file format:tiff
+    Output file location:Elsewhere...|
+    Image bit depth:16-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
+
+SaveImages:[module_num:13|svn_version:'Unknown'|variable_revision_number:15|show_window:False|notes:[]|batch_state:array([], dtype=uint8)|enabled:True|wants_pause:False]
+    Select the type of image to save:Image
+    Select the image to save:Tubulincorrsmall
+    Select method for constructing file names:From image filename
+    Select image name for file prefix:Tubulin
+    Enter single file name:OrigBlue
+    Number of digits:4
+    Append a suffix to the image file name?:Yes
+    Text to append to the image name:_corrected_resized
+    Saved file format:tiff
+    Output file location:Elsewhere...|
+    Image bit depth:16-bit integer
+    Overwrite existing files without warning?:Yes
+    When to save:Every cycle
+    Record the file and path information to the saved image?:No
+    Create subfolders in the output folder?:No
+    Base image folder:Elsewhere...|
+    How to save the series:T (Time)
