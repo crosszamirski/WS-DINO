@@ -2,6 +2,10 @@
 
 Pytorch implementation of [Self-Supervised Learning of Phenotypic Representations from Cell Images with Weak Labels](https://arxiv.org/abs/2209.07819)  
 
+**UPDATE**
+
+We have been accepted to [LMRL](https://www.lmrl.org/) @ [NeurIPS 2022](https://neurips.cc/). We look forward to presenting in December.
+
 
 
 ## Citation
