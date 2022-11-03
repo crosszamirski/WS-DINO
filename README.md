@@ -4,7 +4,7 @@ Pytorch implementation of [Self-Supervised Learning of Phenotypic Representation
 
 **UPDATE**
 
-We have been accepted to [LMRL](https://www.lmrl.org/) @ [NeurIPS 2022](https://neurips.cc/). We look forward to presenting in December.
+This paper has been accepted to [LMRL](https://www.lmrl.org/) @ [NeurIPS 2022](https://neurips.cc/). We look forward to presenting in December.
 
 
 
