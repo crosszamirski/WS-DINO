@@ -16,6 +16,6 @@ If you find this work useful, please consider citing our paper:
 	title = {Self-Supervised Learning of Phenotypic Representations from Cell Images with Weak Labels},
 	year = {2022},
 	doi = {https://doi.org/10.48550/arXiv.2209.07819},
-	journal = {arXiv Preprint}
+	journal = {arXiv Preprint arXiv:2209.07819}
 }
 
